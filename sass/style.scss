@@ -1,0 +1,81 @@
+$color:#3B3733;
+
+@function font_weight($n){
+    @return $n*100;
+}
+@mixin view{
+    border: 1px solid lighten(black, 40);
+    border-radius: 5px;
+    padding: 7px 10px ;
+    width: 34%;
+}
+
+.main{
+    // position: relative;
+    .header{
+        background: $color;
+        padding:5px;
+        color: #8E9494;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        right: 0;
+            p{
+                margin: 5px 0;
+                font-weight: font_weight(6)
+            }
+            .form-inline{
+                margin-top: 3px;
+                .form-group{
+                    margin-right: -4px;
+                    input.input-sm{
+                        height: 25px;
+                    }
+                }
+            }
+            button.btn-sm{
+                padding: 2px 10px;
+            }
+    }
+
+    .content{
+        .top_content{
+             background: #EEEEEE;
+             padding: 75px;
+            h1{
+                color: $color;
+                font-weight: font_weight(7);
+                font-size: 45px;
+            }
+            p{
+                width: 95%;
+                color: #47463B;
+            }
+        }
+
+        .headings{
+            .col-md-4{
+                padding-left: 0;
+            }
+            .about_heading{
+                padding: 30px 0;
+                text-align: justify;
+                margin-right: 30px;
+                h3{
+                    font-weight: font_weight(7);
+                }
+                .view_detail{
+                   p{
+                       @include view();
+                   }
+                }
+            }
+        }
+    }
+
+    .footer{
+        padding-bottom: 200px; 
+        color: $color;
+    }
+}
